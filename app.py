@@ -8,8 +8,8 @@ selected_model=st.sidebar.selectbox("Select a model",options= ["Linear Regressio
 
 
 if selected_model=="Linear Regression":
-    var= st.sidebar.selectbox("Choose prediction",options=["House price prediction","Salary prediction"])
-    if var == "House price prediction":
+   var= st.sidebar.selectbox("Choose prediction",options=["House price prediction","Salary prediction"])
+   if var == "House price prediction":
       longitude=st.number_input("Enter Latitude")
       latitude=st.number_input("Enter Longitude")
       housing_median_age=st.number_input("Enter Age of house")
@@ -30,17 +30,14 @@ if selected_model=="Linear Regression":
       if btn:
          prediction=model.predict(house_data)
          st.success(prediction)
-         
-
-
-    elif var =="Salary prediction":
+   elif var =="Salary prediction":
       Years_of_Experience=st.number_input("Enter your experience")
       b= st.button("Predict")
       salry=pd.DataFrame({"Years of Experience":[Years_of_Experience]})
       with open("Salary prediction ml.pkl", "rb") as f:
        loaded_model=load(f)
-    if b:
-      prdct=loaded_model.predict(salry)
-      st.success(prdct)
+      if b:
+       prdct=loaded_model.predict(salry)
+       st.success(prdct)
 
        
