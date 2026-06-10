@@ -28,7 +28,7 @@ if selected_model=="Linear Regression":
       with open("House prediction ml.pkl", "rb") as file:
          h_model=load(file)
       if btn:
-         prediction=model.predict(house_data)
+         prediction=h_model.predict(house_data)
          st.success(prediction)
    elif var =="Salary prediction":
       Years_of_Experience=st.number_input("Enter your experience")
