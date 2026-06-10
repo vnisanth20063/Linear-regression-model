@@ -29,7 +29,7 @@ if selected_model=="Linear Regression":
          h_model=load(file)
       if btn:
          prediction=h_model.predict(house_data)
-         st.success(prediction)
+         st.success(f"Predicted House Price: $ {prediction}")
    elif var =="Salary prediction":
       Years_of_Experience=st.number_input("Enter your experience")
       b= st.button("Predict")
@@ -38,6 +38,6 @@ if selected_model=="Linear Regression":
        loaded_model=load(f)
       if b:
        prdct=loaded_model.predict(salry)
-       st.success(prdct)
+       st.success(f"Predicted Salary: $ {prdct}") 
 
        
