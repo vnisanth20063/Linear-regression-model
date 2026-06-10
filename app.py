@@ -26,7 +26,7 @@ if selected_model=="Linear Regression":
                     "popula_tion":[popula_tion]})
       btn=st.button("Predict")
       with open("House prediction ml.pkl", "rb") as file:
-         model=load(file)
+         h_model=load(file)
       if btn:
          prediction=model.predict(house_data)
          st.success(prediction)
