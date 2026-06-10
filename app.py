@@ -37,7 +37,9 @@ if selected_model=="Linear Regression":
       with open("Salary prediction ml.pkl", "rb") as f:
        loaded_model=load(f)
       if b:
-       prdct=loaded_model.predict(salry)
-       st.success(f"Predicted Salary: $ {prdct}") 
-
+        try:
+          prdct=loaded_model.predict(salry)
+          st.success(f"Predicted Salary: $ {prdct}") 
+        except Exception as e:
+           st.error("An error occured", e)
        
