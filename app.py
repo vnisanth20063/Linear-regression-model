@@ -4,6 +4,7 @@ from pickle import load
 st.title("Let's Predict")
 
 
+st.image("ph.png",use_container_width=True)
 selected_model=st.sidebar.selectbox("Select a model",options= ["Linear Regression"])
 
 
